@@ -1,15 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import GitHubIcon from '../components/icons/GitHub.astro';
 import LinkedInIcon from '../components/icons/LinkedIn.astro';
 import ItchioIcon from '../components/icons/Itchio.astro';
 ---
 
-<Layout title='Marcos Cantos'>
+<Layout 
+	title='Porfolio de Marcos Cantos - Programador y Desarrollador Web'
+	description="Porfolio web de Marcos Cantos. Ingeniero Multimedia especializado en Programador de Videojuegos y Desarrollador Full-Stack"
+>
 	<Header></Header>
-	<main class="principal">
-		<img src="../../public/Imagenes/FotoPerfil.jpg" alt="Imagen de porfolio">
+	<main id="Home" class="principal">
+		<img src="/Imagenes/FotoPerfil.jpg" alt="Imagen de porfolio">
 		<h1 class="titulo">
 			¡Hola! Soy Marcos Cantos
 		</h1>
@@ -28,6 +32,7 @@ import ItchioIcon from '../components/icons/Itchio.astro';
 			</a>			
 		</section>
 	</main>
+	<Footer></Footer>
 </Layout>
 
 <style>
