@@ -31,6 +31,7 @@ const { title, description } = Astro.props;
         --light-text: black;
         --dark-text: white;
     }
+
     html
     {
         font-family: system-ui, sans-serif;
@@ -44,5 +45,13 @@ const { title, description } = Astro.props;
         align-items: center;
         background: var(--light-background);
         transition: 0.2s ease-in-out;
+    }
+
+    #separador
+    {
+        width: 100%;
+        height: 2px;
+        background-color: currentColor;
+        margin: 10% 0;
     }
 </style>
