@@ -6,6 +6,9 @@ interface Props{
 }
 
 const { title, description } = Astro.props;
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <!doctype html>
@@ -19,23 +22,24 @@ const { title, description } = Astro.props;
         <title>{title}</title>
     </head>
     <body>
+        <Header></Header>
         <slot />
-        
+        <Footer></Footer>
     </body>
 </html>
 
 <style is:global>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
     :root{
-        --light-background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(214, 214, 214, 1) 73%);
-        --dark-background: radial-gradient(circle,rgba(107, 107, 107, 1) 0%, rgba(56, 56, 56, 1) 100%);
-        --light-text: black;
-        --dark-text: white;
+        --background-color: #171010;
     }
 
     html
     {
-        font-family: system-ui, sans-serif;
-        color: var(--light-text);
+        font-family: "Quicksand", sans-serif, system-ui, sans-serif;
+        
+        font-optical-sizing: auto;
+        color: white;
         
     }
     body
@@ -43,7 +47,7 @@ const { title, description } = Astro.props;
         display: flex;
         flex-direction: column;
         align-items: center;
-        background: var(--light-background);
+        background-color: var(--background-color);
         transition: 0.2s ease-in-out;
     }
 

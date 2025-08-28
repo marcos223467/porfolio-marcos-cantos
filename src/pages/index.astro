@@ -1,43 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Proyectos from '../components/Proyectos.astro';
-import SobreMi from '../components/SobreMi.astro';
-import GitHubIcon from '../components/icons/GitHub.astro';
-import LinkedInIcon from '../components/icons/LinkedIn.astro';
-import ItchioIcon from '../components/icons/Itchio.astro';
+import Portada from '../components/Portada.astro';
+import Skills from '../components/Skills.astro';
+import Experiencia from '../components/Experiencia.astro';
 ---
 
 <Layout 
 	title='Porfolio de Marcos Cantos - Programador y Desarrollador Web'
-	description="Porfolio web de Marcos Cantos. Ingeniero Multimedia especializado en Programador de Videojuegos y Desarrollador Full-Stack"
+	description="Porfolio web de Marcos Cantos. Ingeniero Multimedia especializado en Programación de Videojuegos y Desarrollador Full-Stack"
 >
-	<Header></Header>
-	<main id="Home" class="principal">
-		<img src="/Imagenes/FotoPerfil.jpg" alt="Imagen de porfolio">
-		<h1 class="titulo">
-			¡Hola! Soy Marcos Cantos
-		</h1>
-		<h2>
-			Ingeniero Multimedia especializado en Programación de Videojuegos y Desarrollador Full-Stack.
-		</h2>
-		<section class="social">
-			<a id="github" href="https://github.com/marcos223467" target="_blank">
-				<GitHubIcon/>
-			</a>
-			<a id="linkedin" href="https://www.linkedin.com/in/marcos-cantos/" target="_blank">
-				<LinkedInIcon/>
-			</a>
-			<a id="itchio" href="https://marcos223467.itch.io/" target="_blank">
-				<ItchioIcon/>
-			</a>			
-		</section>
-	</main>
-	<hr id="separador"/>
-	<Proyectos></Proyectos>
-	<SobreMi></SobreMi>
-	<Footer></Footer>
+	<Portada />
+	<Skills/>
+	<Experiencia/>
 </Layout>
 
 <style>

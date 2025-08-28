@@ -1,0 +1,44 @@
+---
+interface Props{
+    name: string;
+    img: string;
+}
+
+const {name, img} = Astro.props;
+---
+
+<div class="skill">
+    <img src={img} alt={name} />
+    <h4>{name}</h4>
+</div>
+
+<style>
+    .skill{
+        width: fit-content;
+        height: 40px;
+
+        border-radius: 10px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+
+        padding: 1%;
+        background-color: #5e3737;
+        transition: .3s ease-in-out;
+    }
+
+    .skill:hover{
+        background-color: #7d6868;
+        transition: .3s ease-in-out;
+    }
+
+    .skill img{
+        aspect-ratio: 1 / 1;
+        width: 40px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+</style>

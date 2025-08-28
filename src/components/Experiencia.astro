@@ -1,0 +1,67 @@
+---
+import ExperienciaItem from './ExperienciaItem.astro';
+//Tipos: 0 = Academico, 1 = Docente, 2 = Videojuegos
+const Experiencias = [
+    {
+        name: "Docente de FP de Grado Superior de Informática en Aula Campus",
+        tipo: 1,
+        fechas: "Octubre de 2023 - Actual",
+        descripcion: "Docente de diferentes módulos profesionales de los ciclos formativos de grado superior ASIR, DAM y DAW como: Programación, Aplicaciones Web, Lenguajes de Marcas, Desarrollo de Videojuegos, Desarrollo de interfaces Web, Seguridad Informática"
+    },
+    {
+        name: "Indie Spain Jam 2023",
+        tipo: 2,
+        fechas: "Septiembre de 2023 - Septiembre de 2023",
+        descripcion: "Participación en la Indie Spain Jam 2023 como desarrollador de videojuegos."
+    },
+    {
+        name: "LevelUp Game Jam",
+        tipo: 2,
+        fechas: "Julio de 2023 - Julio de 2023",
+        descripcion: "Participación en la LevelUp Game Jam como desarrollador de videojuegos."
+    },
+    {
+        name: "Indie Spain Jam 2022",
+        tipo: 2,
+        fechas: "Septiembre de 2022 - Septiembre de 2022",
+        descripcion: "Participación en la Indie Spain Jam 2022 como desarrollador de videojuegos."
+    },
+    {
+        name: "Desarrollador Full-Stack en Codenautas",
+        tipo: 0,
+        fechas: "Enero de 2022 - Mayo de 2022",
+        descripcion: "Desarrollo de aplicaciones web y móviles utilizando tecnologías como React, Node.js y MongoDB."
+    }
+]
+---
+
+<section>
+    <h3>Experiencia</h3>
+    <div class="experiencia">
+        {
+            Experiencias.map((exp) => (
+                <ExperienciaItem name={exp.name} tipo={exp.tipo} fechas={exp.fechas} descripcion={exp.descripcion} />
+            ))
+        }
+    </div>
+</section>
+
+<style>
+    section{
+        width: 50%;
+        padding: 2%;
+    }
+    .experiencia{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 20px;
+        
+        padding-left: 2%;
+
+        
+    }
+
+</style>

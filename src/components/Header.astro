@@ -1,79 +1,64 @@
 ---
-import LightDarkIcon from "./icons/Light-Dark.astro";
-import LanguageIcon from "./icons/Language.astro";
+
 ---
-<header>
-    <nav class="navbar">
-        <div class="navbar-sections">
-            <a href="#proyectos">Proyectos</a>
-            <a href="https://www.linkedin.com/in/marcos-cantos/">Sobre Mi</a>
-            <a href="mailto:marcos.cantos.trabajo@gmail.com">Contacto</a>
-        </div>
-        <button id="theme-btn">
-            <LightDarkIcon/>
-        </button>
-        <!-- <button>
-            <LanguageIcon/>
-        </button>
-        -->
+<header class="header">
+    <a href="/" class="titulo">
+        <img src="../../public/Imagenes/FotoPerfil.jpg" alt="logo">
+        <h4>Marcos Cantos</h4>
+    </a>
+    <nav class="nav">
+        <a href="/Proyectos">Proyectos</a>
+        <a href="#sobre-mi">Sobre Mi</a>
+        <a href="#contacto">Contacto</a>
     </nav>
 </header>
 
-<script>
-    let currentTheme = "light";
-    const themeBtn = document.getElementById("theme-btn");
-
-    themeBtn?.addEventListener("click", function(){
-        currentTheme = currentTheme === "light" ? "dark" : "light";
-        document.querySelector("html")?.style.setProperty("color", currentTheme === "light" ? "var(--light-text)" : "var(--dark-text)");
-        document.querySelector("body")?.style.setProperty("background", currentTheme === "light" ? "var(--light-background)" : "var(--dark-background)");
-    });
-</script>
-
 <style>
-    .navbar{
+    .header{
+        width: 100%;
+        height: 3em;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
         align-items: center;
-        width: 70dvw;
+
+        border-bottom: 2px solid #311717;
+        margin-bottom: 2%;
     }
 
-    .navbar-sections{
+    .titulo{
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
         align-items: center;
-        width: 70%;
-        padding: 2%;
-        border: 2px solid currentColor;
-        border-radius: 50px 50px 50px 50px;
-    }
-
-    .navbar-sections a{
-        text-decoration: none;
-        color: currentColor;
-        font-size: 1.2em;
+        gap: 10px;
+        width: 30%;
+        font-size: 20px;
         font-weight: bold;
-        text-align: center;
-        transition: 0.2s ease;
+        margin: 0;
+
+        color: white;
+        text-decoration: none;
     }
 
-    .navbar-sections a:hover{
-        color: rosybrown;
-        transition: 0.2s ease-in-out;
-    }
-
-    .navbar button{
-        background-color: transparent;
-        border: none;
+    .titulo img{
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
         cursor: pointer;
-        color: currentColor;
-        transition: 0.2s ease-in-out;
-    }
-    .navbar button:hover{
-        transform: scale(1.2);
-        transition: 0.2s ease-in-out;
     }
 
+    .nav{
+        width: 70%;
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        justify-content: flex-end;
+        margin-right: 2%;
+    }
+
+    .nav a{
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: 0.3s ease-in-out;
+    }
 </style>
