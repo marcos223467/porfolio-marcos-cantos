@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CartaImagen from "../components/CartaImagen.astro";
+---
+
+<Layout
+    title='Porfolio de Marcos Cantos - Programador y Desarrollador Web'
+	description="Porfolio web de Marcos Cantos. Ingeniero Multimedia especializado en Programación de Videojuegos y Desarrollador Full-Stack"
+>
+    <main class="principal">
+            <CartaImagen />
+            <h2>Marcos Cantos</h2>
+            <h4>Ingeniero Multimedia - Universitat de Valencia</h4>
+        <article>
+            <p>
+                Soy un apasionado de la tecnología y el desarrollo web con experiencia en <b>programación de videojuegos y desarrollo full-stack</b>.
+                Mi trayectoria comienza con la fascinación de los videojuegos, desde que jugué mi primer videojuego supe que quería dedicarme a
+                la programación de videojuegos. Esta pasión me llevó a estudiar <b>Ingeniería Multimedia</b> en la Universitat de Valencia. A raíz de mis
+                estudios, me enamoré del desarrollo de software, tanto el desarrollo web como el desarrollo de videojuegos.
+            </p>
+        </article>
+    </main>
+</Layout>
+
+<style>
+    .principal {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 60%;
+        margin-bottom: 2%;
+    }
+    h4{
+        margin: 0;
+        color: rgba(255, 255, 255, 0.629);
+    }
+    p{
+        font-size: 18px;
+    }
+</style>

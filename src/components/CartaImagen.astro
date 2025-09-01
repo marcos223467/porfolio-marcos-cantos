@@ -1,0 +1,65 @@
+<div class="carta-imagen" id="carta">
+
+</div>
+
+<script>
+    const carta = document.getElementById('carta');
+    let mover = false;
+    let x0 = 0;
+    let y0 = 0;
+    const maxAngle = 30; // máximo ángulo de rotación
+
+    carta?.addEventListener("mousedown", (e) => {
+        mover = true;
+        x0 = e.clientX;
+        y0 = e.clientY;
+        carta.style.transition = "none";
+    });
+
+    document.addEventListener("mousemove", (e) => {
+        if (mover && carta) {
+            // Diferencia desde el punto inicial
+            const dx = e.clientX - x0;
+            const dy = e.clientY - y0;
+
+            // Normaliza la diferencia para limitar el ángulo
+            const rotateY = Math.max(-maxAngle, Math.min(maxAngle, dx / 5));
+            const rotateX = Math.max(-maxAngle, Math.min(maxAngle, -dy / 5));
+
+            carta.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        }
+    });
+
+    document.addEventListener("mouseup", () => {
+        mover = false;
+        if (!carta) return;
+        carta.style.transition = "all 0.3s ease";
+        carta.style.transform = "none";
+    });
+
+</script>
+
+<style>
+    .carta-imagen{
+        width: 250px;
+        height: 350px;
+        background-image: url('/Imagenes/FotoPerfil.jpg');
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 0 10px 5px rgba(156, 45, 45, 0.345);
+
+        animation: flotar 3s ease-in-out ;
+    }
+
+    @keyframes flotar {
+        0%, 100% {
+            transform: rotateX(0deg) rotateY(0deg);
+        }
+        50% {
+            transform: perspective(1000px) rotateY(40deg) rotateX(-20deg);
+        }
+
+    }
+</style>
