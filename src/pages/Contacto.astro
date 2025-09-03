@@ -6,7 +6,105 @@ import Layout from "../layouts/Layout.astro";
     title='Porfolio de Marcos Cantos - Programador y Desarrollador Web'
 	description="Porfolio web de Marcos Cantos. Ingeniero Multimedia especializado en Programación de Videojuegos y Desarrollador Full-Stack"
 >
-    <main>
-        
+    <main class="contacto">
+       <h1>Contacto</h1> 
+       <p>Si deseas ponerte en contacto conmigo, puedes hacerlo a través del siguiente formulario:</p>
+       <form method="POST" action="https://formsubmit.co/marcos.cantos.trabajo@gmail.com" class="formulario">
+            <div class="item">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Introduce tu nombre" />
+            </div>
+            <div class="item">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Introduce tu email" />
+            </div>
+            <div class="item">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Introduce tu mensaje"></textarea>
+            </div>
+            <button class="enviar" type="submit">Enviar Mensaje</button>
+            <input type="hidden" name="_next" value="https://porfolio-marcos-cantos.netlify.app/">
+            <input type="hidden" name="_captcha" value="false">
+       </form>
+       <div>
+            <h3>Otros métodos de contacto:</h3>
+                <p>Email: marcos.cantos.trabajo@gmail.com</p>
+                <p>Teléfono: +34 628 564 925</p>
+       </div>
     </main>
 </Layout>
+
+<style>
+    .contacto{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-bottom: 2%;
+    }
+
+    p{
+        color: var(--color-texto2);
+        margin-top: 0;
+    }
+
+    .formulario{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .item{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    .item input, textarea{
+        width: 100%;
+        height: 2rem;
+        background-color: #261a1a;
+        border: 1px solid #4d3636;
+        border-radius: 5px;
+
+        color: rgb(255, 235, 235);
+        padding: 2%;
+        font-size: 16px;
+        font-family: "Quicksand", sans-serif, system-ui, sans-serif;
+    }
+
+    .item textarea{
+        height: 5rem;
+    }
+
+    .enviar{
+        background-color: var(--primary-color);
+        color: var(--color-texto1);
+        font-family: "Quicksand", sans-serif, system-ui, sans-serif;
+        width: 8rem;
+        height: 2.5rem;
+        border: none;
+        border-radius: 10px;
+        align-self: flex-end;
+        cursor: pointer;
+
+        font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+        .contacto {
+            width: 90%;
+        }
+
+        .item {
+            width: 100%;
+        }
+    }
+</style>

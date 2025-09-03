@@ -63,10 +63,16 @@ import ItchioIcon from '../components/icons/Itchio.astro';
         margin: 0;
     }
 
-    #linkedin:hover
-	{
-		color: rgb(10, 102, 194);
-		transition: .3s ease-in-out;
-	}
+
+    @media (max-width: 600px) {
+        .footer-nav{
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        
+        footer{
+            margin-bottom: 2%;
+        }
+    }
 </style>
 
