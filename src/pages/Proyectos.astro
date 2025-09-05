@@ -185,17 +185,16 @@ const PROYECTOS = [
 
     .proyectos-container::scroll-button(right), .proyectos-container::scroll-button(left)
     {
-        content: ">";
+        content: "";
         border: none;
-        font-family: "Quicksand", sans-serif, system-ui, sans-serif;
-        font-size: 2rem;
-        color: rgb(255, 255, 255);
+        border-top: 4px solid white;
+        border-right: 4px solid white;
+        border-radius: 0 3px 0 0;
+        transform: rotateZ(45deg);
+        background-color: transparent;
         cursor: pointer;
-        width: 40px;
-        height: 40px;
-        background-color: rgb(160, 19, 19);
-        border-radius: 50%;
-        text-align: center;
+        width: 22px;
+        height: 22px;
 
         position: fixed;
         position-anchor: --carrusel;
@@ -204,11 +203,12 @@ const PROYECTOS = [
         display: flex;
         justify-content: center;
         align-items: center;
-
-        padding: 0;
     }
     .proyectos-container::scroll-button(left){
-        content: "<";
+        border: none;
+        border-radius: 0 0 0 3px;
+        border-bottom: 4px solid white;
+        border-left: 4px solid white;
         position-area: left center;
     }
 
