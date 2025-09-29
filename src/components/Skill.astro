@@ -12,6 +12,31 @@ const {name, img} = Astro.props;
     <h4>{name}</h4>
 </div>
 
+<script>
+    let max;
+    const skills = document.querySelectorAll('.skill');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                (entry.target as HTMLElement).style.transform = 'translate(0, 0)';
+                (entry.target as HTMLElement).style.opacity = '1';
+                (entry.target as HTMLElement).style.transition = 'all 0.8s ease-in-out';
+            }
+        });
+    }, {threshold: 0.3});
+
+    skills.forEach(skill => {
+        max = Math.random() < 0.5 ? -200 : 200;
+        (skill as HTMLElement).style.opacity = '0';
+        (skill as HTMLElement).style.transform = `translate(${Math.random() * max}%, ${Math.random() * 200}%)`;
+        observer.observe(skill);
+    });
+    
+    
+
+
+</script>
+
 <style>
     .skill{
         width: fit-content;

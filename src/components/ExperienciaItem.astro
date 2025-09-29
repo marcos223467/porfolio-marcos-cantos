@@ -28,6 +28,23 @@ import GameDev from './icons/GameDev.astro';
     
 </div>
 
+<script>
+    const experiencias = document.querySelectorAll('.experiencia-item');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('mostrar');
+            }
+            else{
+                entry.target.classList.remove('mostrar');
+            }
+        });
+    }, {threshold: 0.2});
+    if (experiencias.length > 0) {
+        experiencias.forEach(experiencia => observer.observe(experiencia));
+    }
+</script>
+
 <style>
     .experiencia-item {
         width: 100%;
@@ -37,6 +54,13 @@ import GameDev from './icons/GameDev.astro';
         justify-content: flex-start;
         align-items: flex-start;
         gap: 15px;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .experiencia-item.mostrar{
+        opacity: 1;
+        
     }
 
     .tipo{
