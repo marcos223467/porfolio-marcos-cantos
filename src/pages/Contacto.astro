@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PhoneIcon from "../components/icons/Phone.astro";
+import MailIcon from "../components/icons/Mail.astro";
 ---
 
 <Layout
@@ -28,8 +30,8 @@ import Layout from "../layouts/Layout.astro";
        </form>
        <div>
             <h3>Otros métodos de contacto:</h3>
-                <p>Email: marcos.cantos.trabajo@gmail.com</p>
-                <p>Teléfono: +34 628 564 925</p>
+            <div class="contact-items"><MailIcon/><span>marcos.cantos.trabajo@gmail.com</span></div>
+            <div class="contact-items"><PhoneIcon/><span>+34 628 564 925</span></div>
        </div>
     </main>
 </Layout>
@@ -106,5 +108,13 @@ import Layout from "../layouts/Layout.astro";
         .item {
             width: 100%;
         }
+    }
+
+    .contact-items{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
     }
 </style>
