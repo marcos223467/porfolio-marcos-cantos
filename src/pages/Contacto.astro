@@ -9,29 +9,31 @@ import MailIcon from "../components/icons/Mail.astro";
 	description="Porfolio web de Marcos Cantos. Ingeniero Multimedia especializado en Programación de Videojuegos y Desarrollador Full-Stack"
 >
     <main class="contacto">
-       <h1>Contacto</h1> 
-       <p>Si deseas ponerte en contacto conmigo, puedes hacerlo a través del siguiente formulario:</p>
-       <form method="POST" action="https://formsubmit.co/marcos.cantos.trabajo@gmail.com" class="formulario">
-            <div class="item">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required placeholder="Introduce tu nombre" />
+        <h1>Contacto</h1> 
+        <p>Si deseas ponerte en contacto conmigo, puedes hacerlo a través del siguiente formulario:</p>
+        <div class="content-container">
+            <form method="POST" action="https://formsubmit.co/marcos.cantos.trabajo@gmail.com" class="formulario">
+                <div class="item">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Introduce tu nombre" />
+                </div>
+                <div class="item">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Introduce tu email" />
+                </div>
+                <div class="item">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Introduce tu mensaje"></textarea>
+                </div>
+                <button class="enviar" type="submit">Enviar Mensaje</button>
+                <input type="hidden" name="_next" value="https://porfolio-marcos-cantos.netlify.app/">
+                <input type="hidden" name="_captcha" value="false">
+            </form>
+            <div class="otros-medios">
+                <h3>Otros métodos de contacto:</h3>
+                <div class="contact-items"><MailIcon/><span>marcos.cantos.trabajo@gmail.com</span></div>
+                <div class="contact-items"><PhoneIcon/><span>+34 628 564 925</span></div>
             </div>
-            <div class="item">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required placeholder="Introduce tu email" />
-            </div>
-            <div class="item">
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Introduce tu mensaje"></textarea>
-            </div>
-            <button class="enviar" type="submit">Enviar Mensaje</button>
-            <input type="hidden" name="_next" value="https://porfolio-marcos-cantos.netlify.app/">
-            <input type="hidden" name="_captcha" value="false">
-       </form>
-       <div>
-            <h3>Otros métodos de contacto:</h3>
-            <div class="contact-items"><MailIcon/><span>marcos.cantos.trabajo@gmail.com</span></div>
-            <div class="contact-items"><PhoneIcon/><span>+34 628 564 925</span></div>
        </div>
     </main>
 </Layout>
@@ -46,6 +48,13 @@ import MailIcon from "../components/icons/Mail.astro";
         margin-bottom: 2%;
     }
 
+    .content-container{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
     p{
         color: var(--color-texto2);
         margin-top: 0;
@@ -57,11 +66,19 @@ import MailIcon from "../components/icons/Mail.astro";
         align-items: flex-start;
         justify-content: flex-start;
         gap: 20px;
-        width: 100%;
+        width: 50%;
+    }
+
+    .otros-medios{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
 
     .item{
-        width: 40%;
+        width: 90%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -94,10 +111,42 @@ import MailIcon from "../components/icons/Mail.astro";
         height: 2.5rem;
         border: none;
         border-radius: 10px;
-        align-self: flex-end;
+        align-self: center;
         cursor: pointer;
 
         font-weight: bold;
+    }
+
+    .contact-items{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 10px;
+        width: 300px;
+        height: 100px;
+        background-color: #261a1a;
+        border-radius: 20px;
+        font-size: 18px;
+        padding: 12px;
+        border: 2px solid #4d3636;
+    }
+
+    @media (min-width: 600px) and (max-width: 1000px)
+    {
+        .contact-items{
+            font-size: clamp(80%,18px, 80%);
+            width: 200px;
+        }
+
+        .otros-medios{
+            justify-content: flex-start;
+            gap: 5px;
+        }
+
+        .otros-medios h3{
+            margin: 0;
+        }
     }
 
     @media (max-width: 600px) {
@@ -108,13 +157,25 @@ import MailIcon from "../components/icons/Mail.astro";
         .item {
             width: 100%;
         }
+
+        .content-container{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .contact-items{
+            max-width: 100%;
+            font-size: 16px;
+        }
+
+        .formulario{
+            width: 100%;
+        }
+
+        .otros-medios{
+            width: 100%;
+        }
     }
 
-    .contact-items{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 10px;
-    }
+    
 </style>
