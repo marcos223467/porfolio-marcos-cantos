@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Portada from '../components/Portada.astro';
 import Skills from '../components/Skills.astro';
 import Experiencia from '../components/Experiencia.astro';
+import Certificados from '../components/Certificados.astro';
 ---
 
 <Layout 
@@ -10,8 +11,9 @@ import Experiencia from '../components/Experiencia.astro';
 	description="Porfolio web de Marcos Cantos. Ingeniero Multimedia especializado en Programación de Videojuegos y Desarrollador Full-Stack"
 >
 	<Portada />
-	<Skills/>
+	<Skills portada={true} />
 	<Experiencia/>
+	<Certificados/>
 </Layout>
 <style>
 	.principal

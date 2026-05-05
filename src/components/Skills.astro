@@ -1,6 +1,10 @@
 ---
 import Skill from './Skill.astro';
 
+interface Props{
+    portada: boolean;
+}
+
 const SKILLS = [
     {
         name: 'JavaScript',
@@ -39,6 +43,14 @@ const SKILLS = [
         img: '/Imagenes/Skills/csharp.svg'
     },
     {
+        name: 'Python',
+        img: '/Imagenes/Skills/python.svg'
+    },
+    {
+        name: 'TypeScript',
+        img: '/Imagenes/Skills/typescript.svg'
+    },
+    {
         name: 'Unity',
         img: '/Imagenes/Skills/unity.svg'
     },
@@ -51,6 +63,7 @@ const SKILLS = [
         img: '/Imagenes/Skills/blender.svg'
     }
 ]
+const {portada} = Astro.props;
 ---
 
 <section>
@@ -58,7 +71,7 @@ const SKILLS = [
     <div class="skills">
         {
             SKILLS.map(skill => (
-                <Skill name={skill.name} img={skill.img} />
+                <Skill name={skill.name} img={skill.img} portada={portada} />
             ))
         }
     </div>
