@@ -15,39 +15,64 @@ const {titulo, descripcion, fecha, link, img, tecnologias} = Astro.props;
 import Skill from "./Skill.astro";
 ---
 <div class="card">
-    <a href={link} target="_blank"><img src={img} alt="Imagen del proyecto de Lista Navideña" /></a>
-    <h3>{titulo}</h3>
-    <p style="color: rgb(192, 192, 192);">{descripcion}</p>
-    <p>{fecha}</p>
-    <div class="tecnologias">
-        {
-            tecnologias.map((tecnologia) => (
-                <Skill name={tecnologia.name} img={tecnologia.img} portada={false}/>
-            ))
-        }
-    </div>
+    <a href={link} target="_blank">
+        <img src={img} alt="Imagen del proyecto de Lista Navideña" />
+        <div class="card-content">
+            <h3>{titulo}</h3>
+            <p style="color: rgb(192, 192, 192);">{descripcion}</p>
+            <p>{fecha}</p>
+            <div class="tecnologias">
+                {
+                    tecnologias.map((tecnologia) => (
+                        <Skill name={tecnologia.name} img={tecnologia.img} portada={false}/>
+                    ))
+                }
+            </div>
+        </div>
+    </a>
 </div>
 
 
 <style>
-    @media (max-width: 600px) {
-        .card{
-            flex: 0 0 100% !important;
-        }
-    }
-
+    
     .card{
-        flex: 0 0 33%;
+        width: calc(25% - 7.5px);
+        box-sizing: border-box;
         border-radius: .5em;
-        align-content: center;
-
-        scroll-snap-align: start;
+        align-items: center;
 
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: space-between;
         gap: 10px;  
+
+        border: 2px solid #311717;
+
+        background-color: #3c2a2a;
+        box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 1);;
+        transition: 0.2s ease-in-out;
+    }
+
+    .card a{
+        align-self: center;
+        text-decoration: none;
+        color: var(--color-texto);
+    }
+
+    .card:hover{
+        border-color: var(--primary-color);
+        transition: 0.2s ease-in-out;
+    }
+
+    .card-content{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 0 0 2% 2%;
+        width: 100%;
     }
 
     .card img{
@@ -71,5 +96,10 @@ import Skill from "./Skill.astro";
 
         width: 100%;
     }
-    
+    @media (max-width: 600px) {
+        .card{
+            width: 100%;
+            max-width: 100%;
+        }
+    }
 </style>

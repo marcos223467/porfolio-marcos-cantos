@@ -31,8 +31,8 @@ import MailIcon from "../components/icons/Mail.astro";
             </form>
             <div class="otros-medios">
                 <h3>Otros métodos de contacto:</h3>
-                <div class="contact-items"><MailIcon/><span>marcos.cantos.trabajo@gmail.com</span></div>
-                <div class="contact-items"><PhoneIcon/><span>+34 628 564 925</span></div>
+                <div class="contact-items"><MailIcon/><span><a href="mailto:marcos.cantos.trabajo@gmail.com"> marcos.cantos.trabajo@gmail.com</a></span></div>
+                <div class="contact-items"><PhoneIcon/><span><a href="tel:+34628564925">+34 628 564 925</a></span></div>
             </div>
        </div>
     </main>
@@ -53,6 +53,11 @@ import MailIcon from "../components/icons/Mail.astro";
         display: flex;
         flex-direction: row;
         align-items: flex-start;
+    }
+    
+    a{
+        color: var(--color-texto);
+        text-decoration: none;
     }
 
     p{
@@ -119,12 +124,12 @@ import MailIcon from "../components/icons/Mail.astro";
 
     .contact-items{
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
         gap: 10px;
-        width: 300px;
-        height: 100px;
+        width: 400px;
+        height: 70px;
         background-color: #261a1a;
         border-radius: 20px;
         font-size: 18px;
@@ -136,7 +141,7 @@ import MailIcon from "../components/icons/Mail.astro";
     {
         .contact-items{
             font-size: clamp(80%,18px, 80%);
-            width: 200px;
+            width: 100%;
         }
 
         .otros-medios{
@@ -166,6 +171,7 @@ import MailIcon from "../components/icons/Mail.astro";
         .contact-items{
             max-width: 100%;
             font-size: 16px;
+            flex-direction: column;
         }
 
         .formulario{
